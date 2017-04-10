@@ -1,0 +1,17 @@
+<div>
+    <table>
+<tr>
+    <label class="lblName">User Name:</label><input #textUName [(ngModel)] = "txtUserName" placeholder="User name">
+</tr>
+<tr>   
+         </tr>
+         <tr>
+        <label class="lblPwd">Password:</label><input type="password" #textPwd [(ngModel)] = "txtUserPwd" placeholder="Password">
+        <br />
+        <br />
+         </tr>
+         <tr>
+        <button (click)="AuthenticateUser(textUName.value,textPwd.value)">Login</button>
+         </tr>  
+    </table>
+</div>

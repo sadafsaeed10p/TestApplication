@@ -1,0 +1,7 @@
+<h3>Home Screen</h3> 
+ <nav>
+      <button (click)="navigate('planet')">Planets</button>
+      <button (click)="navigate('person')">Persons</button>
+      <button (click)="navigate('vehicle')">Vehicles</button>
+      <a [routerLink]="['/']">Logout</a>
+  </nav>

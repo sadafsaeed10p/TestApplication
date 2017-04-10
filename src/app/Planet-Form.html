@@ -1,0 +1,39 @@
+    <nav>
+      <a [routerLink]="['/home']">Home</a>
+      <a [routerLink]="['/']">Logout</a>
+    <nav>
+      <br />
+    <input [(ngModel)] = "searchTerm" (ngModelChange) = "search()" placeholder="Search planet"/>
+    <table>
+      <tr>
+        <td item-width="100px">
+     <ul style="padding-right: 135px;">
+        <!-- this is the new syntax for ng-repeat -->
+        <li style="display: block; padding-bottom: 5px;" *ngFor="let planet of planets">
+            <!--<a href="#" [routerLink]="['/persons', person.id]">-->
+           <button (click)="onClick(planet)"> {{planet.name}}</button>
+        </li>
+      </ul>
+      </td>
+        <td ></td>
+        <td>
+      
+      <div *ngIf="selectedPlanet" style="padding-right: 100px;">
+        <h3>Planet Details</h3>
+        <label class="lblId">Id: </label> {{selectedPlanet.id}} <br/><br/>
+        <label class="lblName">Name: </label>  <input #txtPlanetName type="text" [(ngModel)]="selectedPlanet.name"> <br/><br/>
+        <label class="lblPer">Rotation Period: </label> <input #txtRotPeriod type="text" [(ngModel)]="selectedPlanet.rotation_period"> <br/><br/>
+        <label class="lblGravity">Gravity: </label> <input #txtGravity type="text" [(ngModel)]="selectedPlanet.gravity"> <br/><br/>
+        <label class="lblDiam">Diameter: </label> <input #txtDiameter type="text" [(ngModel)]="selectedPlanet.diameter"> <br/><br/>
+        <button (click)="save(selectedPlanet)">Save</button><br/><br/>
+      </div>
+        </td>
+        <td>
+            <div *ngIf="selectedPlanet">
+              <a target="blank" href='https://www.google.com.pk/#q={{selectedPlanet.name}}'>
+                <img [src]="selectedPlanet.imgPath" height="200px" width="200px">
+              </a>
+            </div>
+        </td>
+      </tr>
+    </table>

@@ -1,0 +1,54 @@
+h3 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+button{
+  color: antiquewhite;
+  background-color: #369;
+  height: 35px;
+  width: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  cursor: pointer
+}
+
+input{
+  height: 30px;
+  width: 230px;
+  border-radius: 6px;
+  border-color: black;
+
+}
+
+.lblName{
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 94px;
+}
+
+.lblPer{
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 27px;
+}
+
+.lblGravity{
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 84px;
+}
+
+
+.lblDiam{
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 71px;
+}
+
+.lblId{
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 31px;
+}

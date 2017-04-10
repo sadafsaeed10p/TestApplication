@@ -1,0 +1,30 @@
+<nav>
+    <a [routerLink]="['/home']">Home</a>
+    <a [routerLink]="['/']">Logout</a>
+</nav>
+<br />
+    <input [(ngModel)] = "searchTerm" (ngModelChange) = "search()" placeholder="Search vehicle"/>
+    <table>
+      <tr>
+        <td item-width="100px">
+     <ul style="padding-right: 135px;">
+        <!-- this is the new syntax for ng-repeat -->
+        <li style="display: block; padding-bottom: 5px;" *ngFor="let vehicle of vehicles">
+          <button (click)="onClick(vehicle)"> {{vehicle.name}}</button>
+        </li>
+      </ul>
+        </td>
+        <td ></td>
+        <td>
+      
+      <div *ngIf="selectedVehicle">
+        <h3>Vehicle Details</h3>
+        <label class="lblId">Id: </label> {{selectedVehicle.id}} <br/><br/>
+        <label class="lblName">Name: </label>  <input #txtVehicleName type="text" [(ngModel)]="selectedVehicle.name"> <br/><br/>
+        <label class="lblModel">Model: </label> <input #txtModel type="text" [(ngModel)]="selectedVehicle.model"> <br/><br/>
+        <label class="lblManufac">Manufacturer: </label> <input #txtManufacturer type="text" [(ngModel)]="selectedVehicle.manufacturer"> <br/><br/>
+        <button (click)="save(selectedVehicle)">Save</button><br/><br/>
+      </div>
+        </td>
+      </tr>
+    </table>

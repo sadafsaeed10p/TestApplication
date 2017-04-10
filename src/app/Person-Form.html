@@ -1,0 +1,34 @@
+<!--<div class="container">-->
+    
+    <nav>
+    <a [routerLink]="['/home']">Home</a>
+    <a [routerLink]="['/']">Logout</a>
+    <nav>
+      <br />
+     <input [(ngModel)] = "searchTerm" (ngModelChange) = "search()" placeholder="Search Person"/>
+    <table>
+      <tr>
+        <td item-width="100px">
+     <ul style="padding-right: 135px;">
+        <!-- this is the new syntax for ng-repeat -->
+        <li style="display: block; padding-bottom: 5px;" *ngFor="let person of people">
+            <!--<a href="#" [routerLink]="['/persons', person.id]">-->
+          <button (click)="onClick(person)"> {{person.name}}</button>
+        </li>
+      </ul>
+      </td>
+        <td ></td>
+        <td>
+      
+      <div *ngIf="selectedPerson">
+        <h3>Person Details</h3>
+        <label class="lblId">Id: </label> {{selectedPerson.id}} <br/><br/>
+        <label class="lblName">Name: </label>  <input #txtPersonName type="text" [(ngModel)]="selectedPerson.name"> <br/><br/>
+        <label class="lblGender">Gender: </label> <input #txtGender type="text" [(ngModel)]="selectedPerson.gender"> <br/><br/>
+        <label class="lblDOB">Birth Year: </label> <input #txtYr type="text" [(ngModel)]="selectedPerson.birth_year"> <br/><br/>
+        <button (click)="save(selectedPerson)">Save</button><br/><br/>
+      </div>
+        </td>
+      </tr>
+    </table>
+<!--</div>-->
